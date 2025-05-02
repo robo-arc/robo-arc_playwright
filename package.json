@@ -4,6 +4,7 @@
   "description": "Playwright framework built for production level automation testing",
   "main": "index.js",
   "scripts": {
+    "build": "npm i && npx playwright install",
     "test": "playwright test --config ./src/config/playwright.config.ts",
     "test:chrome": "playwright test --config ./src/config/playwright.chrome.config.ts",
     "test:firefox": "playwright test --config ./src/config/playwright.firefox.config.ts",

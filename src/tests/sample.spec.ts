@@ -44,24 +44,4 @@ test.describe('Authentication validation', () => {
       timeout: 1 * SECOND,
     })
   })
-
-  test('validate authentication using invalid username and password', async () => {
-    // setup test metadata
-    await allure.severity(Severity.BLOCKER)
-    // actions
-    await actions.navigate.navigateToPath(routes.root)
-    await actions.input.typeInElement(
-      loginPage.usernameField,
-      loginData.username
-    )
-    await actions.input.typeInElement(
-      loginPage.passwordField,
-      loginData.incorrect_password
-    )
-    await actions.mouse.clickOnElement(loginPage.loginBtn)
-    // this test will fail
-    await actions.expect.expectToBeVisible(homePage.logo, {
-      timeout: 1 * SECOND,
-    })
-  })
 })
